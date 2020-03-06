@@ -1,5 +1,14 @@
 import styled from 'styled-components';
 
+export const ContentInput1 = styled.div`
+    display: flex;
+    flex-direction: column;
+    flex-grow: 0;
+
+    label {
+        margin: 0px 0px 0px 10px;
+    }
+`;
 
 
 export const Container = styled.div`
@@ -43,16 +52,5 @@ export const Time = styled.li`
     flex-direction: row;
   border-radius: 4px;
   background: #fff;
-  opacity: ${props => (props.past ? 0.6 : 1)};
-  strong {
-    display: block;
-    color: ${props => (props.available ? '#999' : '#71591c')};
-    font-size: 20px;
-    font-weight: normal;
-  }
-  span {
-    display: block;
-    margin-top: 3px;
-    color: ${props => (props.available ? '#999' : '#666')};
-  }
+  
 `;

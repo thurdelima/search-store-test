@@ -1,10 +1,10 @@
 import React from 'react';
 import {  Paginate } from './pagination';
 
-const Pagination = ({postsPerPage, totalPosts, paginate}) => {
+const Pagination = ({storesPerPage, totalStores, paginate}) => {
     const pageNumbers = [];
 
-    for(let i = 1; i <= Math.ceil(totalPosts / postsPerPage); i++) {
+    for(let i = 1; i <= Math.ceil(totalStores / storesPerPage); i++) {
         pageNumbers.push(i);
     }
 
@@ -14,7 +14,10 @@ const Pagination = ({postsPerPage, totalPosts, paginate}) => {
 
             <Paginate>
                 {pageNumbers.map(number => (
-                    <a onClick={() => paginate(number)} href="#">
+                    <a onClick={(e) => {
+                        e.preventDefault();
+                        paginate(number);
+                    }} href="#">
                     {number}
                 </a>
                 ))}

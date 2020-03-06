@@ -1,10 +1,10 @@
 /* eslint-disable no-undef */
 import React, { useState } from 'react';
 import {Link} from 'react-router-dom';
-import {  Container, Time } from './posts';
+import {  Container, ContentInput1, Time } from './posts';
 
 
-const Posts = ({posts, loading}) => {
+const Posts = ({stores, loading}) => {
     if(loading) {
         return <h2>Loading...</h2>;
     }
@@ -13,9 +13,11 @@ const Posts = ({posts, loading}) => {
         <>
             <Container>
                 <ul>
-                    {posts.map(post => (
-                        <Time key={post.id}>
-                            {post.title}
+                    {stores.map(store => (
+                        <Time key={store.id}>
+                            <span>{store.name}</span>
+                            {/* <i class="fas fa-chevron-right"></i> */}
+                           
                         </Time>
 
                         
