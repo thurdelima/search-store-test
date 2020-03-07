@@ -15,11 +15,6 @@ export const Content1 = styled.div`
     flex-grow: 2;
   }
 
-  a{
-    
-    text-decoration: none;
-    color: white;
-  }
 
   button {
             
