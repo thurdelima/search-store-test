@@ -1,5 +1,11 @@
 import styled from 'styled-components';
 
+
+export const Map = styled.div`
+height:400px;
+width:100%;
+`;
+
 export const Content1 = styled.div`
   display: flex;
 
@@ -48,11 +54,12 @@ height: 100%;
 display: flex;
 flex-direction: column;
 
+
+
 h1{
-  text-align: center;
+    text-align: center;
+    color: #003383;
 }
-
-
 
 
 header {
@@ -72,7 +79,7 @@ header {
 
 ul {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-gap: 15px;
   
 }
@@ -80,12 +87,13 @@ ul {
 
 
   p {
-      width: auto;
-      color: #003383;     
+      width: 30px;
+      color: #003383;
+      margin: -10px auto;
       background-color: #f8f6fb;
-      height: auto;     
-      text-align: left;
-      padding: 20px;
+      height: auto;
+      
+      text-align: center;
   }
 
   form {
@@ -133,39 +141,4 @@ ul {
           
         }
       }
-
-     
 `;
-
-export const Time = styled.li`
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  border-radius: 4px;
-  justify-content: space-around;
-  
-  label {
-    margin-bottom: 5px;
-    text-align: center;
-  }
-
-  span {
-    background-color: white;
-    border-radius: 10px;
-    padding: 10px;
-    text-align: center;
-    color: #003383;
-    margin: 5px;
-  }
-
-  p {
-    width: auto;
-    margin-top: 20px;
-    text-align: center;
-  }
-  
-  
-`;
-
-
-

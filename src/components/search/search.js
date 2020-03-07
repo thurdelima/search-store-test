@@ -25,6 +25,10 @@ export const ContentInput3 = styled.div`
     flex-direction: column;
     flex-grow: 1;
 
+    a {
+      color: white;
+    }
+
     
 `;
 
@@ -84,7 +88,8 @@ export const Content = styled.div`
         align-items: center;
         flex-direction: row;
         margin: 10px;
-        
+        flex-wrap: wrap;  
+
         input {
           background: #fff;
           border: 0;
@@ -129,10 +134,7 @@ export const Content = styled.div`
         }
 `;
 
-export const Map = styled.div`
-  height:400px;
-  width:100%;
-`;
+
 
 
 export const Select = styled.select`

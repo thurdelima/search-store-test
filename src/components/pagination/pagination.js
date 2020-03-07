@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const Paginate = styled.div`
     display: inline-block;
+    padding: 30px;
 
     a {
         color: black;

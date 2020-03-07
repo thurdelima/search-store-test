@@ -3,11 +3,14 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import Stores from '../store';
 import Pagination from '../pagination';
-import Modal from 'react-modal';
+
 import { Content, Container, Select, ContentInput1, ContentInput2, ContentInput3, Map } from './search';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
-
+import { createBrowserHistory } from "history"
+const history = createBrowserHistory({
+  basename: "/"
+})
 
 
 function Search() {
@@ -44,33 +47,11 @@ function Search() {
     
   
 
-    const openModal = (e) => {
-        e.preventDefault();
-                  
-        setModalIsOpen(true)
-        
-    }
+    
 
    
 
-    const initMap = (lat, long) => {
-            
-        let options = {
-            zoom: 15,
-            center:{lat:lat,lng:long}
-        }
-
-        let map = new google.maps.Map(document.getElementById('map'), options);
-        // console.log(options);
-        let marker = new google.maps.Marker({
-            position:{lat: lat,lng: long},
-            map:map
-          });
-
-        
-
-        
-    }
+    
 
     useEffect( () => {
        
@@ -79,8 +60,8 @@ function Search() {
                 const watcher =   navigator.geolocation.watchPosition(function (position) {
                     setLatitude(position.coords.latitude);
                     setLongitude(position.coords.longitude);
-                     console.log(latitude);
-                     console.log(longitude);
+                     //console.log(latitude);
+                     //console.log(longitude);
                      
                    
                     //initMap(latitude, longitude);
@@ -132,30 +113,27 @@ function Search() {
                </ContentInput2>
 
                <ContentInput3>
-                <button type="submit">Buscar</button>
+                <button onClick={() => history.push('/store')} type="submit">Buscar</button>
                    
                </ContentInput3>
 
                <p>ou</p>
+               
 
                <ContentInput3>
-                <button onClick={openModal} type="submit"> <i class="fas fa-map-marker-alt"></i> {loadMap?'loading': 'Usar localização'}</button>
-                <Link to="/store">Localizar</Link>
+                <button  type="submit"> <i class="fas fa-map-marker-alt"></i> <Link to={{pathname:'/map', state:{latitude:latitude, longitude:longitude}}}>Localizar</Link></button>
+                
                </ContentInput3>
                
            </form>
 
-           <Stores stores={currentStores} loading={loading} />
+           <Stores stores={currentStores} loading={loading}  />
            <Pagination storesPerPage={storesPerPage} totalStores={stores.length} paginate={paginate} />
 
           
             
             
-            <Modal isOpen={modalIsOpen} onRequestClose={() => setModalIsOpen(false) }>
-                <h2>Modal title</h2>
-                <Map id="map" />
-                <button onClick={() => setModalIsOpen(false)} >Close</button>
-            </Modal>
+           
            
 
            </Content> 

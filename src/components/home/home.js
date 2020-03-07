@@ -5,10 +5,11 @@ export const Container = styled.div`
   margin: 50px auto;
   margin-top: 50px;
   /* padding-bottom: 50px;*/
-  margin-bottom: 0px;
+  margin-bottom: 10px;
   height: 100%;
   display: flex;
   flex-direction: column;
+ 
 
   
 

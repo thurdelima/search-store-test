@@ -16,9 +16,11 @@ max-width: 600px;
 
 /* padding-bottom: 50px;*/
 margin-bottom: 0px;
-height: 100%;
+height: auto;
 display: flex;
 flex-direction: column;
+margin-left: 10px;
+  margin-right: 10px;
 
 display: flex;
 flex-direction: column;
@@ -52,5 +54,11 @@ export const Time = styled.li`
     flex-direction: row;
   border-radius: 4px;
   background: #fff;
+
+  a {
+    -webkit-text-decoration: none;
+    text-decoration: none;
+    color: black;
+  }
   
 `;
